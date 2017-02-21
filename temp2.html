@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8" />
+		<title>Canvas Layers Test</title>
+		<style>
+			#testcanvas {
+				opacity: 0.7;
+			}
+		</style>
+	</head>
+	<body>
+		<section>
+			<div id="canvasesdiv" style="position:relative; width:400px; height:300px">
+
+				<canvas id="layer1"
+				style="z-index: 1;
+				position:absolute;
+				left:0px;
+				top:0px;" >
+					This text is displayed if your browser does not support HTML5 Canvas.
+				</canvas>
+				<canvas id="testcanvas"
+				style=" z-index: 0;
+				position:absolute;
+				left:0px;
+				top: 0px;
+				border: 1px solid">
+					This text is displayed if your browser does not support HTML5 Canvas.
+				</canvas>
+			</div>
+		</section>
+		<script type="text/javascript">
+			var layer1;
+			var ctx1;
+			var x = 400;
+			var y = 300;
+			var dx = 2;
+			var dy = 4;
+			var WIDTH = 400;
+			var HEIGHT = 300;
+			var city = new Image();
+
+			// var raindropcharacters = "田由甲申甴电甶男甸甹町画甼甽甾甿畀畁畂畃畄畅畆畇畈畉畊畋界畍畎畏畐畑";
+			var raindropcharacters = "01";
+			raindropcharacters = raindropcharacters.split("");
+
+			var font_size = 9;
+			var columns = window.innerWidth / font_size;
+			var drops = [];
+			//x below is the x coordinate
+			//1 = y co-ordinate of the drop(same for every drop initially)
+			for (var x = 0; x < columns; x++)
+				drops[x] = 1;
+
+			function init() {
+				city.src = "city.png";
+				layer1 = document.getElementById("layer1");
+				layer1.width = window.innerWidth;
+				layer1.height = window.innerHeight;
+				ctx1 = layer1.getContext("2d");
+				testcanvas = document.getElementById("testcanvas");
+				testcanvas.width = window.innerWidth;
+				testcanvas.height = window.innerHeight;
+				ctxtest = testcanvas.getContext("2d");
+
+				setInterval(drawAll, 33);
+			}
+
+			function drawAll() {
+				draw1();
+				drawtest();
+			}
+
+			function draw1() {
+				ctx1.fillStyle = "#FAF7F8";
+				ctx1.beginPath();
+				ctx1.closePath();
+				ctx1.fill();
+				ctx1.fillStyle = "#FF0000";
+				ctx1.beginPath();
+				ctx1.arc(x, y, 10, 0, Math.PI * 2, true);
+				ctx1.closePath();
+				ctx1.fill();
+
+				if (x + dx > window.innerWidth || x + dx < 0)
+					dx = -dx;
+				if (y + dy > window.innerHeight || y + dy < 0)
+					dy = -dy;
+
+				x += dx;
+				y += dy;
+			}
+
+			function drawtest() {
+				//Black BG for the canvas
+				//translucent BG to show trail
+				ctxtest.fillStyle = "rgba(0, 0, 0, 0.1)";
+				ctxtest.fillRect(0, 0, testcanvas.width, testcanvas.height);
+
+				ctxtest.fillStyle = "#0F0";
+				ctxtest.font = font_size + "px arial";
+				//looping over drops
+				for (var i = 0; i < drops.length; i++) {
+					//a random character to print
+					var text = raindropcharacters[Math.floor(Math.random() * raindropcharacters.length)];
+					//x = i*font_size, y = value of drops[i]*font_size
+					ctxtest.fillText(text, i * font_size, drops[i] * font_size);
+
+					//sending the drop back to the top randomly after it has crossed the screen
+					//adding a randomness to the reset to make the drops scattered on the Y axis
+					if (drops[i] * font_size > window.innerHeight && Math.random() > 0.975)
+						drops[i] = 0;
+
+					//incrementing Y coordinate
+					drops[i]++;
+				}
+			}
+
+			init();
+		</script>
+
+	</body>
+</html>

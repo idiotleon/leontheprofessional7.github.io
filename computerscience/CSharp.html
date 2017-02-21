@@ -1,0 +1,343 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Parallel Programming in C Sharp</title>
+    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css" type="text/css">
+    <script src="http://code.jquery.com/jquery-latest.js" type="text/javascript"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js" type="text/javascript"></script>
+</head>
+<body>
+    <h4>Adam Freeman - Pro ASP.NET MVC 5 Platform</h4>
+    <div class="container">
+        <h5>Understanding the ASP.NET Context Objects</h5>
+        <table class="table table-bordered table-striped">
+            <caption>Table 3-9: The Most Commonly Used HttpContext Members</caption>
+            <tr>
+                <th class="col-sm-2">Name</th>
+                <th class="col-sm-10">Description</th>
+            </tr>
+            <tr>
+                <td>
+                    Application
+                </td>
+                <td>
+                    Returns the <b>HttpApplicationState</b> object used to
+                    manage application state data (see chapter 10).
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    ApplicationInstance
+                </td>
+                <td>
+                    Returns the <b>HttpApplication</b> object associated with the current request (described later in the chapter).
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    Cache
+                </td>
+                <td>
+                    Returns a Cache object used to cache data. See chapter 11 for details.
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    Current
+                </td>
+                <td>
+                    (Static.) Returns the <b>HttpContext</b> object for the current request.
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    CurrentHandler
+                </td>
+                <td>
+                    Returns the <b>IHttpHandler</b> instance that will generate content for the request.
+                    See Chapter 5 for details of handlers and Chapter 6 for information about how to preempt
+                    the handler selection process used by the ASP.NET platform.
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    IsDebuggingEnabled
+                </td>
+                <td>
+                    Returns true if the debugger is attached to the ASP.NET application. You can use this to
+                    perform debug-specific activities, but if you do so, take care to test thoroughly without
+                    the debugger before deployment.
+                </td>
+            </tr>
+            <tr>
+                <td>Items</td>
+                <td>
+                    Returns a collection that can be used to pass state data between ASP.NET framework
+                    components that participate in processing a request
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    GetSection(name)
+                </td>
+                <td>
+                    Gets the specified configuration section from the Web.config file. I show you how to
+                    work with the Web.config files in Chapter 9.
+                </td>
+            </tr>
+            <tr>
+                <td>Request</td>
+                <td>
+                    Returns an <b>HttpRequest</b> object that provides details of the request being processed.
+                    I describe the <b>HttpRequest</b> class later in this chapter.
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    Response
+                </td>
+                <td>
+                    Returns an <b>HttpResponse</b> object that provides details fot the response that is being
+                    constructed and that will be sent to the browser. I describe the <b>HttpResponse</b> object
+                    later in this chapter.
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    Session
+                </td>
+                <td>
+                    Returns an <b>HttpSession</b> state object that provides access to the session state. This
+                    property willr return <b>null</b> unitl the <b>PostAcquireRequestState</b> application event has
+                    been triggered. See Chapter 10 for details.
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    Server
+                </td>
+                <td>
+                    Returns an <b>HttpServedUtility</b> object that can contain utility functions, the most
+                    useful being the ability to control request handler execution (see Chapter 6).
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    Timestamp
+                </td>
+                <td>
+                    Returns a DateTime object that contains the time at which the <b>HttpContext</b> object was created
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    Trace
+                </td>
+                <td>
+                    Used to record diagonostic information. See Chapter 8.
+                </td>
+            </tr>
+        </table>
+    </div>
+
+    <div class="container">
+        <table class="table table-bordered table-striped">
+            <caption>Table 03-10: Obtaining an HttpContext in Different ASP.NET/MVC Components</caption>
+            <tr>
+                <th class="col-xs-2">Component</th>
+                <th class="col-xs-10">Technique</th>
+            </tr>
+            <tr>
+                <td>
+                    Controller
+                </td>
+                <td>
+                    Use the <b>HttpContext</b> property defined by <b>Controller</b>, which is the
+                    base class for MVC framework controllers.
+                </td>
+            </tr>
+            <tr>
+                <td>View</td>
+                <td>
+                    Use the <b>Context</b> property defined by <b>WebViewPage</b>, which is
+                    the base class used to compile <b>Razor</b> views.
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    Global Application Class
+                </td>
+                <td>
+                    Use the <b>Context</b> convenience property defined by the <b>HttpApplication</b> class
+                    (which is the base for the global application class).
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    Module
+                </td>
+                <td>
+                    The Init method is passed an <b>HttpContext</b> object when it is invoked, and the life-cycle
+                    event handlers are passed an <b>HttpApplication</b> object, which defineds a <b>Context</b>
+                    property. See Chapter 4 for details of modules.
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    Handler
+                </td>
+                <td>
+                    The <b>ProcessRequest</b> method is passed an <b>HttpContext</b> object when it is invoked. 
+                    See Chapter 5 for details of handlers.
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    Universally
+                </td>
+                <td>
+                    You can always get the <b>HttpContext</b> object associated with the current request
+                    through the static <b>HttpContext.Current</b> property.
+                </td>
+            </tr>
+        </table>
+    </div>
+
+    <h4>Adam Freeman - Parallel Programming in C#</h4>
+    <div class="container">
+        <table class="table table-bordered table-condensed">
+            <caption>Table02-03: Canceling Tasks</caption>
+            <tr>
+                <th class="col-xs-1">Step</th>
+                <th class="col-xs-3">Problem</th>
+                <th class="col-xs-6">Solution</th>
+                <th class="col-xs-2">Listing</th>
+            </tr>
+            <tr>
+                <td>
+                    01
+                </td>
+                <td>
+                    Create a cancellable task.
+                </td>
+                <td>
+                    Get a <b>System.Threading.CancellationToken</b> by creating a new instance
+                    of <b>System.Threading.CancellationTokenSource</b> and accessing the Token
+                    property. Use the token as a constructor argument to the Task class.
+                </td>
+                <td>
+                    02_07
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    02
+                </td>
+                <td>
+                    Cancel a task.
+                </td>
+                <td>
+                    Call the <b>Cancel()</b> method on <b>CancellationTokenSource</b>.
+                </td>
+                <td>
+                    02_07
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    03
+                </td>
+                <td>
+                    Cancel several tasks.
+                </td>
+                <td>
+                    User a single <b>CancellationToken</b> in the constructor of several Tasks, and
+                    call the <b>Cancenl()</b> method on the <b>CancellationTokenSource</b>.
+                </td>
+                <td>
+                    02_10
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    04
+                </td>
+                <td>
+                    Monitor several tokens.
+                </td>
+                <td>
+                    Create a composite cancellation source by calling the
+                    <b>CancelationTokenSoure.CreateLinkedTokenSource()</b> method.
+                </td>
+                <td>
+                    02_11
+                </td>
+            </tr>
+            <tr>
+                <td>05</td>
+                <td>Poll for task cancellation.</td>
+                <td>
+                    Check the <b>isCancellationRequested</b> property of <b>CancellationToken</b> each time
+                    your task body loop iterates. If this property returns <b>true</b>, release any resources
+                    you have been using the throw an instance of <b>OperationCanceledException</b>.
+                </td>
+                <td>
+                    02_07
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    06
+                </td>
+                <td>
+                    Poll for task cancellation.
+                </td>
+                <td>
+                    Call the <b>Token.ThrowIfCancellationRequested()</b> method to check for
+                    cancellation, and throw an instance of <b>OperationCanceledException</b>
+                    in a single code statement.
+                </td>
+                <td>
+                    02_08
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    07
+                </td>
+                <td>
+                    Use a delegate for task cancellation.
+                </td>
+                <td>
+                    Pass an <b>Action</b> delegate to the <b>Token.Register()</b> method. The delegate will be invoked
+                    when the <b>CancellationTokenSource.Cancel()</b> method is called.
+                </td>
+                <td>
+                    02_08
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    08
+                </td>
+                <td>
+                    Use a wait handle for task cancellation.
+                </td>
+                <td>
+                    Call the <b>Token.WaitHandle.WaitOne()</b> method to block the calling thread
+                    until the <b>CancellationTokenSource.Cancel()</b> method is called.
+                </td>
+                <td>
+                    02_09
+                </td>
+            </tr>
+            <tr>
+                <td>10</td>
+                <td>Determine if a task was cancelled.</td>
+                <td>Read the <b>Task.IsCancelled</b> property, which returns <b>true</b> if the <b>Task</b> was cancelled.</td>
+                <td>02_12</td>
+            </tr>
+        </table>
+    </div>
+</body>
+</html>

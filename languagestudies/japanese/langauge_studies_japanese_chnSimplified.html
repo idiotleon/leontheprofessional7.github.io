@@ -1,0 +1,876 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+    <title>欢迎来到日语角</title>
+    <meta name="viewport" content="width=device-width, initital-scale=1.0">
+    <meta charset="utf-8" />
+
+    <!--
+    <link rel="stylesheet" href="../../resources/bootstrap.min.css">
+    <script src="../../resources/jquery-1.11.3.min.js"></script>
+    <script src="../../resources/bootstrap.min.js"></script>-->
+
+    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+
+    <style>
+        .panel {
+            font-family: "Microsoft YaHei";
+        }
+
+        .checkboxMarkAsComplete {
+            float: right;
+            padding-right: 10px;
+            font-weight: bold;
+        }
+
+        .border00 {
+            border-radius: 25px;
+            background: #8AC007;
+            padding: 20px;
+        }
+
+        .border01 {
+            border-radius: 25px;
+            border: 2px solid #8AC007;
+            padding: 20px;
+        }
+
+        .border03 {
+            border-radius: 25px;
+            background: url(paper.gif);
+            background-position: left top;
+            background-repeat: repeat;
+            padding: 20px;
+        }
+
+        .border05 {
+            border-radius: 15px 50px 30px;
+            background: #8AC007;
+            padding: 20px;
+        }
+
+        .border06 {
+            border-radius: 15px 50px;
+            background: #8AC007;
+            padding: 20px;
+        }
+    </style>
+</head>
+
+<body class="container">
+    <nav class="navbar navbar-inverse">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavBar">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="../../index_enUS.html">LyuYang's Court</a>
+            </div>
+            <div class="collapse navbar-collapse" id="myNavBar">
+                <ul class="nav navbar-nav">
+                    <li class="dropdown" id="#languagestudies">
+                        <a class="dropdown-toggle" data-toggle="dropdown">
+                            LanguageStudies<span class="caret"></span>
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li>
+                                <a href="../deutsch/languagestudies_deutsch_enUS.html">Deutsch</a>
+                            </li>
+                            <li>
+                                <a href="../english/languagestudies_english_chnSimplified.html">English</a>
+                            </li>
+                            <li>
+                                <a href="../fracais/languagestudies_francais_enUS.html">Francais</a>
+                            </li>
+                            <li>
+                                <a href="../русский/languagestudies_русский_enUS.html">Russian</a>
+                            </li>
+                            <li role="presentation" class="divider"></li>
+                            <li>
+                                <a href="../korean/language_studies_korean_chnSimplified.html">한국어</a>
+                            </li>
+                            <li role="presentation" class="disabled"><a role="menuitem" tabindex="-1" href="#">日本語</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="../../chineseclassics/chineseclassics.html">Chinese Classics</a>
+                    </li>
+                    <li class="dropdown" id="computerframeworks">
+                        <a class="dropdown-toggle" data-toggle="dropdown">ComputerFrameworks<span class="caret"></span></a>
+                        <ul class="dropdown-menu">
+                            <li>
+                                <a href="#">Android</a>
+                            </li>
+                            <li>
+                                <a href="#">SpringMVC</a>
+                            </li>
+                            <li>
+                                <a href="#">MEAN</a>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+                <ul class="nav navbar-nav navbar-right">
+                    <li>
+                        <a href="#"><span class="glyphicon glyphicon-user"></span>Sign Up</a>
+                    </li>
+                    <li>
+                        <a href="#"><span class="glyphicon glyphicon-log-in"></span>Login</a>
+                    </li>
+                    <li class="dropdown" id="websitelanguageselection">
+                        <a class="dropdown-toggle" data-toggle="dropdown">
+                            Website Language <span class="caret"></span>
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li>
+                                <a href="index_enus.html">English</a>
+                            </li>
+                            <li>
+                                <a href="index_chnsimpilied.html">中文简体</a>
+                            </li>
+                            <li>
+                                <a href="index_chntranditional.html">中文繁體</a>
+                            </li>
+                            <li>
+                                <a href="index_jpn.html">日本語</a>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+
+    <ul class="nav nav-pills">
+        <li class="active"><a data-toggle="pill" href="#xinbiaori_textbook">新版标准日本语</a></li>
+        <li><a data-toggle="pill" href="#xinjichuriyu_textbook">新基础日语教程</a></li>
+    </ul>
+
+    <div class="tab-content">
+
+        <div id="xinbiaori_textbook" class="tab-pane fade in active">
+            <ul class="nav nav-pills">
+                <li class="active"><a data-toggle="pill" href="#xinbiaorivolume1">第一册</a></li>
+                <li><a data-toggle="pill" href="#xinbiaorivolume2">第二册</a></li>
+                <li><a data-toggle="pill" href="#xinbiaorivolume3">第三册</a></li>
+                <li><a data-toggle="pill" href="#xinbiaorivolume4">第四册</a></li>
+            </ul>
+
+            <div class="tab-content">
+                <div id="xinbiaorivolume1" class="tab-pane fade in active">
+                    <div class="panel-group" id="xinbiaorivolume1panelgroup">
+                        <div class="panel panel-default" id="japanesealphabetpanel">
+                            <div class="panel-heading" data-toggle="collapse" data-target="#japanesealphabetpanelbody" data-parent="#xinbiaorivolume1panelgroup" href="#japanesealphabetpanelbody">
+                                平(片)仮名
+                                <label class="checkboxMarkAsComplete"><input type="checkbox" id="checkboxjapanesealphabet" onchange="markAsComplete('checkboxjapanesealphabet', 'japanesealphabetpanel')">已完成</label>
+                            </div>
+                            <div class="panel-body panel-collapse collapse" id="japanesealphabetpanelbody">
+                                <table class="table table-no-bordered table-condensed table-hover">
+                                    <tr>
+                                        <td>あ(ア)</td>
+                                        <td>い(イ)</td>
+                                        <td>う(ウ)</td>
+                                        <td>え(エ)</td>
+                                        <td>お(オ)</td>
+                                    </tr>
+                                    <tr>
+                                        <td>か(カ)</td>
+                                        <td>き(き)</td>
+                                        <td>く(ク)</td>
+                                        <td>け(ケ)</td>
+                                        <td>こ(コ)</td>
+                                    </tr>
+                                    <tr>
+                                        <td>さ(サ)</td>
+                                        <td>し(シ)</td>
+                                        <td>す(ス)</td>
+                                        <td>せ(セ)</td>
+                                        <td>そ(ソ)</td>
+                                    </tr>
+                                    <tr>
+                                        <td>た(タ)</td>
+                                        <td>ち(チ)</td>
+                                        <td>つ(つ)</td>
+                                        <td>て(テ)</td>
+                                        <td>と(ト)</td>
+                                    </tr>
+                                    <tr>
+                                        <td>な(ナ)</td>
+                                        <td>に(二)</td>
+                                        <td>ぬ(ヌ)</td>
+                                        <td>ね(ネ)</td>
+                                        <td>の(ノ)</td>
+                                    </tr>
+                                    <tr>
+                                        <td>ま(マ)</td>
+                                        <td>み(ミ)</td>
+                                        <td>む(ム)</td>
+                                        <td>め(メ)</td>
+                                        <td>も(モ)</td>
+                                    </tr>
+                                    <tr>
+                                        <td>は(ハ)</td>
+                                        <td>ひ(ヒ)</td>
+                                        <td>ふ(フ)</td>
+                                        <td>へ(ヘ)</td>
+                                        <td>ほ(ホ)</td>
+                                    </tr>
+                                    <tr>
+                                        <td>ら(ラ)</td>
+                                        <td>り(り)</td>
+                                        <td>る(ル)</td>
+                                        <td>れ(レ)</td>
+                                        <td>ろ(ロ)</td>
+                                    </tr>
+                                    <tr>
+                                        <td>や(ヤ)</td>
+                                        <td></td>
+                                        <td>ゆ(ユ)</td>
+                                        <td></td>
+                                        <td>よ(ヨ)</td>
+                                    </tr>
+                                    <tr>
+                                        <td>わ(ワ)</td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td>を(ヲ)</td>
+                                    </tr>
+                                    <tr>
+                                        <td>ん(ン)</td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                    </tr>
+                                </table>
+                            </div>
+                        </div>
+
+                        <div class="panel panel-default" id="xbr0101panel">
+                            <div class="panel-heading" data-toggle="collapse" data-target="#xbr0101panelbody" data-parent="#xinbiaorivolume1panelgroup" href="#xbr0101panelbody">
+                                第01課 李さんは中国人です
+                                <label class="checkboxMarkAsComplete"><input type="checkbox" id="checkboxxbr0101" onchange="markAsComplete('checkboxxbr0101', 'xbr0101panel')">已完成</label>
+                            </div>
+                            <div class="panel-body panel-collapse collapse " id="xbr0101panelbody">
+                                <label>基本课文</label>
+                                <ul>
+                                    <li>李さんは中国人です。</li>
+                                    <li>森さんは学生ではありません。</li>
+                                    <li>林さんは日本人ですか。</li>
+                                    <li>李さんはJC企画の社員です。</li>
+                                </ul>
+                                <label>语法解释</label>
+                            </div>
+                        </div>
+
+                        <div class="panel panel-default" id="xbr0102panel">
+                            <div class="panel-heading" data-toggle="collapse" data-target="#xbr0102panelbody" data-parent="#xinbiaorivolume1panelgroup" href="#xbr0102panelbody">
+                                第02課
+                                <label class="checkboxMarkAsComplete"><input type="checkbox" id="checkboxxbr0102" onchange="markAsComplete('checkboxxbr0102', 'xbr0102panel')">已完成</label>
+                            </div>
+                            <div class="panel-body panel-collapse collapse" id="xbr0102panelbody">
+                                <label>基本课文</label>
+                                <ul>
+                                    <li>李さんは中国人です。</li>
+                                </ul>
+                                <label>语法解释</label>
+                            </div>
+                        </div>
+
+                        <div class="panel panel-default" id="xbr0103panel">
+                            <div class="panel-heading" data-toggle="collapse" data-target="#xbr0103panelbody" data-parent="#xinbiaorivolume1panelgroup" href="#xbr0103panelbody">
+                                第03課
+                                <label class="checkboxMarkAsComplete"><input type="checkbox" id="checkboxxbr0103" onchange="markAsComplete('checkboxxbr0103', 'xbr0103panel')">已完成</label>
+                            </div>
+                            <div class="panel-body panel-collapse collapse " id="xbr0103panelbody">
+                                <label>基本课文</label>
+                                <ul>
+                                    <li>李さんは中国人です。</li>
+                                </ul>
+                                <label>语法解释</label>
+                            </div>
+                        </div>
+
+                        <div class="panel panel-default" id="xbr0117panel">
+                            <div class="panel-heading" data-toggle="collapse" data-target="#xbr0117panelbody" data-parent="#xinbiaorivolume1panelgroup" href="#xbr0117panelbody">
+                                第17課
+                                <label class="checkboxMarkAsComplete"><input type="checkbox" id="checkboxxbr0117" onchange="markAsComplete('checkboxxbr0117', 'xbr0117panel')">已完成</label>
+                            </div>
+                            <div class="panel-body collapse panel-collapse" id="xbr0117panelbody">
+                                <label>基本课文</label>
+                                <ul>
+                                    <li>李さんは中国人です。</li>
+                                </ul>
+                                <label>语法解释</label>
+                                <ol class="border01">
+                                    <li>
+                                        动词的否定性
+                                    </li>
+                                    <ol>
+                                        <li>否定助动词:ない</li>
+                                        要求接在动词的否定性后，
+                                        表示对此动词所表达的动作或作用的否定。本教材称之为"ない"形。
+                                        <li>各类动词的否定形:</li>
+                                        <ol>
+                                            <li>
+                                                判断动词的否定形
+                                            </li>
+                                            <ul>
+                                                <li class="border06">五段动词的否定形，把词尾改成该行的”あ”段假名( + ない)</li>
+                                                <table class="table-condensed table-hover">
+                                                    <tr>
+                                                        <td>行く</td>
+                                                        <td> ---> </td>
+                                                        <td>行かない</td>
+                                                        <td>泳ぐ</td>
+                                                        <td> ---> </td>
+                                                        <td>泳がない</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>帰る</td>
+                                                        <td> ---> </td>
+                                                        <td>帰らない</td>
+                                                        <td>わかる</td>
+                                                        <td> ---> </td>
+                                                        <td>わからない</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>待つ</td>
+                                                        <td> ---> </td>
+                                                        <td>待たない</td>
+                                                        <td>話す</td>
+                                                        <td> ---> </td>
+                                                        <td>話さない</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>休む</td>
+                                                        <td> ---> </td>
+                                                        <td>休まない</td>
+                                                        <td>呼ぶ</td>
+                                                        <td> ---> </td>
+                                                        <td>呼ばない</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>死ぬ</td>
+                                                        <td> ---> </td>
+                                                        <td>死ねない</td>
+                                                        <td></td>
+                                                        <td></td>
+                                                        <td></td>
+                                                    </tr>
+                                                </table>
+                                                <ul>
+                                                    <li class="border06"><注>: 以”う”为词尾的五段动词，词尾在”わ”行。</li>
+                                                    <table class="table-condensed table-hover">
+                                                        <tr>
+                                                            <td>洗う</td>
+                                                            <td> ---> </td>
+                                                            <td>洗わない</td>
+                                                            <td></td>
+                                                            <td>言う</td>
+                                                            <td> ---> </td>
+                                                            <td>言わない</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>買う</td>
+                                                            <td> ---> </td>
+                                                            <td>買わない</td>
+                                                        </tr>
+                                                    </table>
+                                                </ul>
+                                                <ul>
+                                                    <li class="border06">“ある”没有否定形。需要否定时直接用形容词"ない"。</li>
+                                                    <table class="table-condensed table-hover">
+                                                        <tr>
+                                                            <td>ある</td>
+                                                            <td>---></td>
+                                                            <td>ない</td>
+                                                        </tr>
+                                                    </table>
+                                                </ul>
+
+
+                                                <li class="border06">一段动词: 去掉词尾"る"+"ない"</li>
+                                                <table class="table table-condensed table-hover">
+                                                    <tr>
+                                                        <td>食べる</td>
+                                                        <td>　---> </td>
+                                                        <td>食べない</td>
+                                                        <td>見る</td>
+                                                        <td> ---> </td>
+                                                        <td>見ない</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>見せる</td>
+                                                        <td>　---> </td>
+                                                        <td>見せないい</td>
+                                                        <td>寝る</td>
+                                                        <td> ---> </td>
+                                                        <td>寝ない</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>起きる</td>
+                                                        <td>　---> </td>
+                                                        <td>起きない</td>
+                                                        <td>あげる</td>
+                                                        <td> ---> </td>
+                                                        <td>あげない</td>
+                                                    </tr>
+                                                </table>
+
+                                                <li class="border06">变格动词</li>
+                                                <ul>
+                                                    <li class="border06">する ---> し + ない</li>
+                                                    <table class="table table-condensed table-hover">
+                                                        <tr>
+                                                            <td>買い物する</td>
+                                                            <td> ---> </td>
+                                                            <td>買い物しない</td>
+                                                            <td>見学する</td>
+                                                            <td> ---> </td>
+                                                            <td>見学しない</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>勉強する</td>
+                                                            <td> ---> </td>
+                                                            <td>勉強しない</td>
+                                                            <td>散歩する</td>
+                                                            <td> ---> </td>
+                                                            <td>散歩しない</td>
+                                                        </tr>
+                                                    </table>
+                                                    <li class="border06">来る（くる） ---> 来ない（こない）</li>
+                                                </ul>
+                                        </ol>
+
+                                        </ul>
+                                    </ol>
+                                </ol>
+
+                                <ol class="border01">
+                                    <li value="2">与”ない”有关的句型</li>
+                                    <ul>
+                                        <li class="border06">なけでください</li>
+                                        接续方法同接“ない”。意思是:"请对方不要做某事"。与"てください"相反。
+                                        <table class="table table-condensed table-hover">
+                                            <caption style="text-align:left">例</caption>
+                                            <tr>
+                                                <td>今日は忙しいですから、休まないでください。</td>
+                                            </tr>
+                                            <tr>
+                                                <td>仕事はまだ終わってませんから、帰らないでください。</td>
+                                            </tr>
+                                            <tr>
+                                                <td>電話番号をほかの人に教えでください。</td>
+                                            </tr>
+                                        </table>
+                                    </ul>
+                                </ol>
+                            </div>
+                        </div>
+
+                        <div class="panel panel-default" id="xbr0123panel">
+                            <div class="panel-heading" data-toggle="collapse" data-target="#xbr0123panelbody" data-parent="#xinbiaorivolume1panelgroup" href="#xbr0123panelbody">
+                                第23課
+                                <label class="checkboxMarkAsComplete"><input type="checkbox" id="checkboxxbr0123" onchange="markAsComplete('checkboxxbr0123', 'xbr0123panel')">已完成</label>
+                            </div>
+                            <div class="panel-body collapse panel-collapse" id="xbr0123panelbody">
+                                <label>基本课文</label>
+                                <ul>
+                                    <li>李さんは もう すぐ 来ると 思います。</li>
+                                </ul>
+                                <label>语法解释</label>
+                                <ol>
+                                    <li>小句(简体形) と　思います。</li>
+                                    <ul>
+                                        <li>表示说话人的思考内容时，在句子后面加上"と思います"。</li>
+                                        <ul style="list-style-type:none">
+                                            <li>
+                                                <span class="glyphicon glyphicon-triangle-right"></span>李さんは　もう　すぐ　来る　と　思います。
+                                            </li>
+                                        </ul>
+                                    </ul>
+                                    <li>名[人] は　小句(简体形) と 言いました</li>
+                                    <ul>
+                                        <li>向第三者转述他人所说的话时，在所说的话后加"~と言いました"。</li>
+                                        <ul style="list-style-type:none">
+                                            <li>
+                                                <span class="glyphicon glyphicon-triangle-right"></span>陳さんは　パーティーに　行く　と　言いました。
+                                            </li>
+                                            <li>
+                                                <span class="glyphicon glyphicon-triangle-right"></span>森さんは　中国語の試験は　難しかった　と　言いました。
+                                            </li>
+                                        </ul>
+                                        <li>如果想明确指出是向谁说的，则在句子中加入"名字+に"。</li>
+                                        <ul style="list-style-type:none">
+                                            <li>
+                                                <span class="glyphicon glyphicon-triangle-right"></span>小野さんは　李さんに　ちょっと　休みたい　と言いました。
+                                            </li>
+                                        </ul>
+                                        <li>如果转述某人反复说起的事情时，用"~と言っています"表示</li>
+                                        <ul style="list-style-type:none">
+                                            <li>
+                                                <span class="glyphicon glyphicon-triangle-right"></span>来週のハイキングに　張さんも　行きたいと言っています。
+                                            </li>
+                                        </ul>
+                                        <div class="panel panel-default">
+                                            <注意>
+                                                ”～と思います””～と言いました”前面出现名词或者二类形容词小句时必须加"だ"
+                                                <br />
+                                                <ul style="list-style-type:none">
+                                                    <li>
+                                                        <span class="glyphicon glyphicon-ok"></span>あそこは 駅
+                                                        <u>だ</u>と 思います。
+                                                    </li>
+                                                    <li>
+                                                        <span class="glyphicon glyphicon-remove"></span>あそこは 駅 と 思います。
+                                                    </li>
+                                                </ul>
+                                        </div>
+                                    </ul>
+                                    <li>~のです/~んです</li>
+                                    <li>小句 が 小句</li>
+                                </ol>
+                            </div>
+                        </div>
+
+                        <div class="panel panel-default" id="xbr0124panel">
+                            <div class="panel-heading" data-toggle="collapse" data-target="#xbr0124panelbody" data-parent="#xinbiaorivolume1panelgroup" href="#xbr0124panelbody">
+                                第24課 李さんは もう すぐ 来る と 思います。
+                                <label class="checkboxMarkAsComplete"><input type="checkbox" id="checkboxxbr0124" onchange="markAsComplete('checkboxxbr0124', 'xbr0124panel')">已完成</label>
+                            </div>
+                            <div class="panel-body collapse panel-collapse" id="xbr0124panelbody">
+                                <div class="border00">
+                                    <label>基本课文</label>
+                                    <ul>
+                                        <li>李さんは もう  すぐ  来ると  思います。</li>
+                                        <li>陳さんは  パーティーに 行くと  言いました。</li>
+                                        <li>すみません、頭が 痛いんです。</li>
+                                        <li>東京タワーへ  行きたいんですが、どうやって  行きますか。</li>
+                                    </ul>
+                                </div>
+                                <div class="border01">
+                                    <label>语法解释</label>
+                                    <ul style="list-style-type: none">
+                                        <li>24.1 小句(简体形) と 思います。</li>
+                                        <ul>
+                                            <li>表示说话人的思考内容时，在句子后面加上"と思います"。</li>
+                                            <ul style="list-style-type:none">
+                                                <li>
+                                                    <span class="glyphicon glyphicon-triangle-right"></span>李さんは　もう　すぐ　来る　と　思います。
+                                                </li>
+                                            </ul>
+                                        </ul>
+                                        <li>24.2 名[人] は　小句(简体形) と 言いました</li>
+                                        <ul>
+                                            <li>向第三者转述他人所说的话时，在所说的话后加"~と言いました"。</li>
+                                            <ul style="list-style-type:none">
+                                                <li>
+                                                    <span class="glyphicon glyphicon-triangle-right"></span>陳さんは　パーティーに　行く　と　言いました。
+                                                </li>
+                                                <li>
+                                                    <span class="glyphicon glyphicon-triangle-right"></span>森さんは　中国語の試験は　難しかった　と　言いました。
+                                                </li>
+                                            </ul>
+                                            <li>如果想明确指出是向谁说的，则在句子中加入"名字+に"。</li>
+                                            <ul style="list-style-type:none">
+                                                <li>
+                                                    <span class="glyphicon glyphicon-triangle-right"></span>小野さんは　李さんに　ちょっと　休みたい　と言いました。
+                                                </li>
+                                            </ul>
+                                            <li>如果转述某人反复说起的事情时，用"~と言っています"表示</li>
+                                            <ul style="list-style-type:none">
+                                                <li>
+                                                    <span class="glyphicon glyphicon-triangle-right"></span>来週のハイキングに　張さんも　行きたいと言っています。
+                                                </li>
+                                            </ul>
+                                            <div class="panel panel-default">
+                                                <注意>
+                                                    ”～と思います””～と言いました”前面出现名词或者二类形容词小句时必须加"だ"
+                                                    <br />
+                                                    <ul style="list-style-type:none">
+                                                        <li>
+                                                            <span class="glyphicon glyphicon-ok"></span>あそこは 駅
+                                                            <u>だ</u>と 思います。
+                                                        </li>
+                                                        <li>
+                                                            <span class="glyphicon glyphicon-remove"></span>あそこは 駅 と 思います。
+                                                        </li>
+                                                    </ul>
+                                            </div>
+                                        </ul>
+                                        <li>~のです/~んです</li>
+                                        <li>小句 が 小句</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div id="xinbiaorivolume2" class="tab-pane fade in">
+
+                </div>
+
+                <div id="xinbiaorivolume3" class="tab-pane fade in">
+
+                </div>
+
+                <div id="xinbiaorivolume4" class="tab-pane fade in">
+
+                </div>
+            </div>
+        </div>
+
+        <div id="xinjichuriyu_textbook" class="tab-pane fade in">
+            <ul class="nav nav-pills">
+                <li class="active"><a data-toggle="pill" href="#xinjichuvolume1">第一册</a></li>
+                <li><a data-toggle="pill" href="#xinjichuvolume2">第二册</a></li>
+            </ul>
+
+            <div class="tab-content">
+                <div id="xinjichuvolume1" class="tab-pane fade in active">
+                    <div class="panel-group" id="xinjichuriyuvolume1panelgroup">
+
+                        <div class="panel panel-default" id="xjc0101panel">
+                            <div class="panel-heading" data-toggle="collapse" data-target="#xjc0101panelbody" data-parent="#xinjichuriyuvolume2panelgroup" href="#xjc0101panelbody">
+                                第01課
+                                <label class="checkboxMarkAsComplete"><input type="checkbox" id="checkboxxjc0101" onchange="markAsComplete('checkboxxjc0101', 'xjc0101panel')">已完成</label>
+                            </div>
+                            <div class="panel-body panel-collapse collapse " id="xjc0101panelbody">
+
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+                <div id="xinjichuvolume2" class="tab-pane fade in">
+                    <div class="panel-group" id="xinjichuriyuvolume2panelgroup">
+
+                        <div class="panel panel-default" id="xjc0226panel">
+                            <div class="panel-heading" data-toggle="collapse" data-target="#xjc0226panelbody" data-parent="#xinjichuriyuvolume2panelgroup" href="#xjc0226panelbody">
+                                第26課
+                                <label class="checkboxMarkAsComplete"><input type="checkbox" id="checkboxxjc0226" onchange="markAsComplete('checkboxxjc0226', 'xjc0226panel')">已完成</label>
+                            </div>
+                            <div class="panel-body panel-collapse collapse " id="xjc0226panelbody">
+
+                            </div>
+                        </div>
+
+                        <div class="panel panel-default" id="xjc0227panel">
+                            <div class="panel-heading" data-toggle="collapse" data-target="#xjc0227panelbody" data-parent="#xinjichuriyuvolume2panelgroup" href="#xjc0227panelbody">
+                                第27課
+                                <label class="checkboxMarkAsComplete"><input type="checkbox" id="checkboxxjc0227" onchange="markAsComplete('checkboxxjc0227', 'xjc0227panel')">已完成</label>
+                            </div>
+                            <div class="panel-body panel-collapse collapse " id="xjc0227panelbody">
+
+                                <div id="xjc0227Carousel" class="carousel slide" data-ride="carousel" data-interval="false">
+                                    <!--Indicator-->
+                                    <ol class="carousel-indicators">
+                                        <li data-target="#xjc0227Carousel" data-slide-to="0" class="active"></li>
+                                        <li data-target="#xjc0227Carousel" data-slide-to="1"></li>
+                                        <li data-target="#xjc0227Carousel" data-slide-to="2"></li>
+                                        <li data-target="#xjc0227Carousel" data-slide-to="3"></li>
+                                    </ol>
+
+                                    <!-- Wrapper for slides-->
+                                    <div class="carousel-inner" role="listbox">
+
+                                        <div class="item active">
+                                            <div class="jumbotron">
+                                                <p>27.1 动词的可能态</p><br />
+                                                <p>可能助动词"れる"、"られる"</p>
+                                                <p>
+                                                    "れる"接在五段动词后;
+                                                </p>
+                                                <p>
+                                                    "られる"接在其它动词，即一段动词以及变格动词后。
+                                                </p>
+                                            </div>
+
+                                            <table class=" table table-hover">
+                                                <thead>
+                                                    <tr><th>动词类型</th><th>变化规律</th><th>例</th></tr>
+                                                </thead>
+                                                <tbody>
+                                                    <tr>
+                                                        <td>五段动词</td>
+                                                        <td>将词尾改为该行的"あ"段假名后加"れる"</td>
+                                                        <td>行く　--->　行かれる　<br /> 帰る　--->　帰られる</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td></td>
+                                                        <td>
+                                                            但在口语中往往出现约音现象，
+                                                            而直接将词尾改为该行的"え"段假名加"る"的方法。
+                                                            现在这个方法已经固定下来了。
+                                                        </td>
+                                                        <td>行く ---> 行ける <br /> 帰る ---> 帰れる</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td></td>
+                                                        <td>不过，"え"段假名后加"れる"的用法也存在</td>
+                                                        <td>
+                                                            運ぶ ---> 運べる <br />
+                                                            引く ---> 引ける <br />
+                                                            立つ ---> 立てる <br />
+                                                            集まる ---> 集まれる <br />
+                                                            使う ---> 使える <br />
+                                                            読む ---> 読める <br />
+                                                            泳ぐ ---> 泳げる <br />
+                                                            送る ---> 送れる <br />
+                                                            入る ---> 入れる
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>一段动词</td>
+                                                        <td>去词尾"る" + "られる"</td>
+                                                        <td>
+                                                            食べる ---> 食べられる <br />
+                                                            見る ---> 見られる <br />
+                                                            つける ---> つけられる
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>变格动词</td>
+                                                        <td>由"する"变为"される"或者"できる"(现在更多用此变形)</td>
+                                                        <td>
+                                                            来る ---> 来(こ)れる<br />
+                                                            収穫できる <br />
+                                                            運転できる、勉強できる。
+                                                        </td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+                                        </div>
+
+                                        <div class="item">
+                                            <ul style="list-style-type:none">
+                                                <li>27.7 疑问词 + でも</li>
+                                                <ul>疑问词 + でも + 肯定的、积极的谓语,表示全盘肯定</ul>
+                                                <ul>
+                                                    疑问词 + も + 否定性的、消极的谓语,表示全盘否定
+                                                    <br />
+                                                    疑问词 + も + 肯定性的、积极的谓语,表示全盘肯定
+                                                </ul>
+                                                <br />
+                                                <ul>
+                                                    <label>例</label>
+                                                    <li>それは誰でもわかります。</li>
+                                                    <li>お腹が好きですから、何でも食べます。</li>
+                                                    <li>体にいいことだったら、何でもします。</li>
+                                                    <li>何でも話します。</li>
+                                                    <li>行ったことがない町だったら、どこでもいきますよ。</li>
+                                                    <li>どれでも好きですが、でも、この中から一つか選べないんです。</li>
+                                                    <li>今日は何も食べませんでした。</li>
+                                                    <li>昨日どこ行きませんでした。ずっと家にいました。</li>
+                                                    <li>あの人はどんなスポッツも上手です。</li>
+                                                    <li>どんな仕事もできます。</li>
+                                                </ul>
+                                            </ul>
+                                        </div>
+
+                                        <div class="item">
+                                            <ul style="list-style-type:none">
+                                                <li>27.8 数量、时间 + で</li>
+                                                <ul>表示范围和限定</ul>
+                                                <br />
+                                                <ul>
+                                                    <label>例</label>
+                                                    <li>一本８０円で、３本で２４０円です。</li>
+                                                    <li>この仕事だたっら、一日でできますよ。</li>
+                                                    <li>今は東京までは新幹線で３時間ぐらいで行けます。</li>
+                                                    <li>5000円で辞書を買ってください。</li>
+                                                </ul>
+                                            </ul>
+                                        </div>
+
+                                        <div class="item">
+                                            <ul style="list-style-type:none">
+                                                <li>27.9 "見られる"/"聞ける"与"見える"/"聞こえる"的区别:</li>
+                                                <ul>
+                                                    ”見る”的可能态"見られる"与可能动词"見える"都有"見ることができます"的意义。
+                                                    但"見られる"可以表示意志、经过努力的结果。
+                                                    而"見える"表示的意义则与人的意志无关。
+                                                </ul>
+                                                <ul>"聞ける"与"聞こえる"的关系也同理。</ul>
+                                                <br />
+                                                <ul>
+                                                    <label>例</label>
+                                                    <li>日本語の映画はどこで見られますか。</li>
+                                                    <li>このラジオでは日本語の番組も聞けます。</li>
+                                                    <li>
+                                                        コンピューターを利用して、好きな番組が見られますから、
+                                                        ぜひいいコンピューターを買いたいです。
+                                                    </li>
+                                                    <li>
+                                                        みんなが静かだったら、あの人が何を話しているのが聞けますが、でも、
+                                                        今は賑やかですから、私は何も聞けません。
+                                                    </li>
+                                                </ul>
+                                            </ul>
+                                        </div>
+                                    </div>
+
+                                    <!-- Left and right controls -->
+                                    <a class="left carousel-control" href="#xjc0227Carousel" role="button" data-slide="prev">
+                                        <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+                                        <span class="sr-only">Previous</span>
+                                    </a>
+                                    <a class="right carousel-control" href="#xjc0227Carousel" role="button" data-slide="next">
+                                        <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+                                        <span class="sr-only">Next</span>
+                                    </a>
+                                </div>
+
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+
+    <img src="" />
+    <script>
+        $(window).scroll(function () {
+            if ($(window).scrollTop() >= 100) {
+                $(".backtop").fadeIn();
+            } else {
+                $(".backtop").fadeOut();
+            }
+        });
+        $(".backtop").click(function (event) {
+            $('html, body').animate({ scrollTop: 0 }, 500);
+            return false;
+        });
+
+        function markAsComplete(checkboxId, id) {
+            if ($('#' + checkboxId).prop("checked")) {
+                $('#' + id).hide()
+            } else {
+                $('#' + id).show();
+            }
+        }
+
+        function displayHiddenContent(checkboxId, id) {
+            if ($('#' + checkboxId).prop("checked")) {
+                $('#' + id).show();
+            } else {
+                $('#' + id).hide();
+            }
+        }
+    </script>
+</body>
+</html>
